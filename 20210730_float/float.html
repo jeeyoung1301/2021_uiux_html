@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after{content:"";clear:both;display:block}
+        div.box{width: 1000px;height: 200px;
+            background-color: skyblue;
+        margin:0 auto}
+        div.box>div{
+            width: 200px;height: 200px;
+            /* float: left; */
+        
+        }
+        div.box1{background: blue;float: left;}
+        div.box2{background: orange;float: right;}      
+        li{list-style:none}  
+        *{margin:0;padding:0}
+
+        div.nav>ul>li{float: left;
+        width: 200px;
+        text-align: center;
+        height: 40px;
+        line-height:40px;
+        }
+        div.nav{
+            background: green;
+            width: 1000px;
+            margin:0 auto
+        }
+        div.nav>ul>li:hover{background: orange;}
+    </style>
+</head>
+<body>
+<div class="box clearfix">
+    <div class="box1">left</div>
+    <div class="box2">right</div>
+</div>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dolor!
+
+<div class="nav">
+    <ul class="clearfix">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+</div>
+</div>
+</body>
+</html>
