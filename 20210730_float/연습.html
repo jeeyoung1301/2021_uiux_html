@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+ <style>
+.clearfix:after{content:"";clear:both;display:block}
+*{margin:0;padding:0}
+div.box{
+    /* height: 200px; */
+    width: 500px;
+    background: orange;
+    margin:0 auto}
+
+div.box1{
+    height: 200px;
+    width: 200px;
+    background: pink;
+    float: left;
+}
+
+div.box2{
+    height: 200px;
+    width: 200px;
+    background: palegoldenrod;
+    float:right;
+}
+
+li{list-style:none}
+
+div.nav{
+    background: yellow;
+    margin:0 auto;
+    width: 1000px;
+    height: 40px;
+}
+
+div.nav>ul>li{
+    float:left;
+    width: 200px;
+    text-align:center;
+    height: 40px;
+    line-height:40px;
+            
+}
+
+div.nav>ul>li:hover{background: violet;}
+
+ </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <div class="box1">left</div>
+        <div class="box2">right</div>
+    </div>
+
+
+
+    <div class="nav">
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
