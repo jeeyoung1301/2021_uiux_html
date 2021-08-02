@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.clearfix:after{content:"";display:block;clear:both;}
+*{margin:0;padding:0;}
+li{list-style:none}
+a:link,a:visited{text-decoration:none;color:black;}
+div.nav>ul>li{
+    float:left;
+    width: 166px;
+}
+div.nav{
+   background-color: skyblue;
+   width: 1000px;
+   margin:0 auto;
+}
+div.nav>ul>li>a:hover{background-color: black;
+color:white;
+}
+
+div.nav>ul>li>a{
+    text-align:center;
+    /* height: 40px; */
+    line-height:40px;
+   display:block;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+   <div class="nav">
+       <ul class="clearfix">
+           <li><a href="#">menu1</a></li>
+           <li><a href="#">menu2</a></li>
+           <li><a href="#">menu3</a></li>
+           <li><a href="#">menu4</a></li>
+           <li><a href="#">menu5</a></li>
+           <li><a href="#">menu6</a></li>
+       </ul>
+   </div>
+</body>
+</html>
