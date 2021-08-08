@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+  <style>
+
+      /* header */
+      
+      #header{width: 980px;background-color: cyan;margin: 0 auto;padding-top:10px;}
+      #header>h1{
+          width: 100px;height: 100px;
+          background-color: gray;
+          margin: 0 auto;
+          text-align: center;
+          margin-bottom:10px;
+        }
+      #header>h1>a{
+          display: block;
+          line-height: 100px;
+      }    
+      
+      .nav{
+          height: 40px;width: 980px;
+          margin: 0 auto;
+      }
+      .nav>ul>li>a{
+          float: left;display: block;
+          width: 20%;background-color: brown;
+          line-height: 40px;
+          text-align: center;
+          color:white;
+      }
+      .nav a:hover{background-color: red;}
+
+    /* visual  */
+    .visualsection{
+        background-color: pink;height: 300px;padding: 20px;
+    }
+    .container{
+        background-color: yellow;
+        position: relative;
+        margin: 0 auto;
+        width: 980px;height: 300px;
+        /* overflow:hidden; */
+    }
+    .box1{
+        position: absolute;top: 50%;margin-top: -75px;
+        height: 150px;width: 400px;
+        background-color: #f0f;
+    }
+    .box1>img{width: 100%;}
+    .box2{
+        position: absolute;right: 0;bottom:0;
+        width: 200px;height: 149px;
+        background-color: greenyellow;
+        margin-right:20px;
+    }
+    .box2>img{width: 100%;}
+
+    /* content1  */
+    .content1>h3{text-align: center;margin-top: 30px;}
+    .content1>h3:after{content:"";background-color: black;display: block;height: 2px;width: 100px;margin: 0 auto;}
+    .content1>p{text-align: center;margin-bottom: 30px;}
+
+    .content1{width: 980px;margin: 0 auto;padding-bottom: 30px;}
+    .content1 li{
+        float: left;
+        display: block;
+        padding-right: 25px;
+        width: 226.25px;
+    }
+    .content1 li:last-child{padding-right: 0;}
+    .content1 img{width: 100%;}
+
+/* content2  */
+.content2{background-color: gray;}
+.content2 ul{width: 980px;margin: 0 auto;padding: 30px;}
+.content2 li{float: left;display: block;width: 301.666px;margin-right: 25px;}
+.content2 li:last-child{margin-right: 0;}
+.content2 img{width: 100%;}
+
+/* content3  */
+.content3>h3{text-align: center;padding-top: 30px;}
+.content3>h3:after{content:"";display: block;background-color: black;height: 2px;width: 100px;margin: 0 auto;}
+.content3>p{text-align: center;padding-bottom: 20px;}
+
+.content3{width: 980px;margin: 0 auto;padding-bottom: 30px;}
+.content3 li{float: left;display: block;width: 226.25px;padding-right: 25px;}
+.content3 li:last-child{padding-right: 0;}
+.content3 img{width: 100%;}
+
+/* footer  */
+#footer{background-color: gray;padding-top: 30px;}
+#footer>.bottominfo{width: 980px;margin: 0 auto;}
+#footer h2{float: left;width: 200px;height: 200px;}
+#footer p{float: left;display: block;width: 780px;}
+  </style>
+        
+</head>
+<body>
+    <!-- header start -->
+   <header id="header">
+       <h1 class="logosection">
+           <a href="#">
+            LOGO
+           </a>
+        </h1>
+        <div class="nav">
+            <ul class="clearfix">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">COMPANY</a></li>
+                <li><a href="#">PRODUCT</a></li>
+                <li><a href="#">ONLINE</a></li>
+                <li><a href="#">COMMUNITY</a></li>
+            </ul>
+        </div>
+   </header>
+   <!-- header end -->
+
+   <!-- visual start -->
+   <div class="visualsection">
+    <div class="container">
+        <div class="box1">
+          <img src="../images/pc01.jpg" alt="pc01">  
+        </div>
+        <div class="box2">
+            <img src="../images/strawberry.png" alt="pc01">  
+          </div>
+    </div>
+   </div>
+   <!-- visual end -->
+
+   <!-- content start -->
+   <div class="content1">
+       <h3>PRODUCT</h3>
+       <p>Lorem ipsum dolor sit amet.</p>
+       <ul class="clearfix">
+           <li><img src="../images/testing.jpg" alt=""></li>
+           <li><img src="../images/testing.jpg" alt=""></li>
+           <li><img src="../images/testing.jpg" alt=""></li>
+           <li><img src="../images/testing.jpg" alt=""></li>
+       </ul>
+   </div>
+<div class="content2">
+    <ul class="clearfix">
+        <li><img src="../images/testing.jpg" alt=""></li>
+        <li><img src="../images/testing.jpg" alt=""></li>
+        <li><img src="../images/testing.jpg" alt=""></li>
+    </ul>
+</div>
+<div class="content3">
+    <h3>GALLERY</h3>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <ul class="clearfix">
+        <li><img src="../images/testing.jpg" alt=""></li>
+        <li><img src="../images/testing.jpg" alt=""></li>
+        <li><img src="../images/testing.jpg" alt=""></li>
+        <li><img src="../images/testing.jpg" alt=""></li>
+    </ul>
+</div>
+   <!-- content end -->
+<!-- footer start -->
+<footer id="footer">
+    <div class="bottominfo clearfix">
+     <h2>LOGO</h2>
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Molestiae dolorem similique nihil ex amet vero atque fuga reprehenderit aut quis.</p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+</html>
