@@ -14,14 +14,12 @@
         $(document).ready(function(){
             var myslide = $('.slider').bxSlider({controls:false});
 
-            $('.nextBtn').clik(function(){
-                myslide.goToNextSlide(); //bxslider public method option
-            });
-            $('.prevBtn').clik(function(){
-                myslide.goToPrevSlide(); //bxslider public method option
-            });
+            $('.nextBtn').click(function(){myslide.goToNextSlide();});
+            $('.prevBtn').click(function(){myslide.goToPrevSlide();});
         });
     </script>
+
+
 
     <style>
         .sliderWrap{position: relative;}
