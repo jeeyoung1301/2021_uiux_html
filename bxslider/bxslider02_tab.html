@@ -15,6 +15,7 @@
     $(document).ready(function(){
         $('.slider').bxSlider({
             pagerCustom:'.bxPager',
+            mode:'vertical'
         });
     })
     </script>
@@ -27,7 +28,7 @@
         }
         .slider .txt h2{font-size: 1.8rem;margin-bottom: 15px;position: relative;}
         .slider .txt h2:after{
-            content:"";width: 60px;height: 4px;
+            content:"";width: 50px;height: 4px;
             display: block;background: #000;
             position: absolute;top:-10px;
             border-radius: 2px;
@@ -43,12 +44,16 @@
         }
         .slider .txt a.btn:hover{background: black;color:white;}
 
-        .sliderPager{position: absolute;bottom: 0;width: 100%;}
+        .sliderPager{position: absolute;width: 100%;top:0}
         .sliderPager .bxPager a{
-            display: block;float: left;
-            line-height: 40px;
-            width: calc(100% / 3);
+            display: block;
+            /* float: left; */
+            height: 25%;
+            /* width: calc(100% / 3); */
+            display: flex;justify-content: center;align-items: center;
             text-align: center;
+            line-height: 40px;
+            background-color: skyblue;
         }
         .sliderPager .bxPager a.active{background: pink;}
 
