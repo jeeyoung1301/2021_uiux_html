@@ -6,7 +6,7 @@ body{
 }
 
 .blind{position: absolute;display: block;left: 0;top: -9999px;}
-fieldset{border: 1px solid #dadada;background: white;}
+fieldset{border: 1px solid #dadada;background: white;margin-bottom: 10px;}
 
 
 .wrap{
@@ -22,7 +22,13 @@ div#header>h1{
 }
 div#header a{display: block;height: 44px;text-indent: -9999px;}
 
-#content .field{position: relative;}
+#content .field{
+    position: relative;
+    border: 0.5px solid #f0f0f0;
+}
+
+.field.none{border-bottom: 0 none !important;}
+
 #content .field .inp-field{
     width: 350px;height: 49px;
     border: 0 none;
@@ -42,3 +48,24 @@ div#header a{display: block;height: 44px;text-indent: -9999px;}
 #content .field .icon.email{background-position: 0 -47px;}
 #content .field .icon.pass{background-position: 0 -466px;}
 #content .field .icon.pass2{background-position: 0 -515px;}
+
+p.radio>input:nth-child(1):checked ~ label.male{background: skyblue !important;}
+p.radio>input:nth-child(2):checked ~ label.female{background: skyblue !important;}
+
+div#content .field.radio{
+    height: 50px;
+}
+div#content .field.radio input{position: absolute;left: 20px;top: 20px;}
+div#content .field .btn-label{
+    display: block;width: 212px;height: 31px;
+    text-align: center;line-height: 31px;
+    border: 1px solid #dcdcdc;border-radius: 5px;
+    position: absolute;top: 10px;background: white;
+    cursor: pointer;
+}
+div#content .field .btn-label.male{left: 15px;}
+div#content .field .btn-label.female{right: 15px;}
+
+
+/* common  */
+.w458{width: 458px !important;}
