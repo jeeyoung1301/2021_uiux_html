@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .header div{width:980px;margin: 0 auto;}
+        .header h1{text-align: center;}
+
+        table{border-collapse: collapse;margin: 0 auto;text-align: center;border: 1px solid #000;}
+        table.sample3 td{border: 1px solid #000;width: 185px;height: 50px;}
+        table.sample3 tr:nth-child(1)>td:nth-child(1){width: 78px;}
+
+        table.sample4 td{border: 1px solid #000;}
+
+        table.sample4 tr:nth-child(1)>td{width: 185px;}
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>입학지원서(일반고)</h1>
+        </div>
+    </div>
+    <table class="sample3">
+        <tr>
+            <td rowspan="4">인적<br>사항</td>
+            <td>성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</td>
+            <td></td>
+            <td>학&nbsp;&nbsp;교&nbsp;&nbsp;명</td>
+            <td></td>
+            <td rowspan="4">사진첨부</td>
+        </tr>
+        <tr>
+            <td>주민등록번호</td>
+            <td></td>
+            <td>e - mail</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>휴&nbsp;대&nbsp;폰(C.P)</td>
+            <td></td>
+            <td>긴급연락처<br>(학부모)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+    <table class="sample4">
+        <tr>
+            <td>추천교사명</td>
+            <td></td>
+            <td>연락처</td>
+            <td></td>
+            <td>학교연락처</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>인지경로</td>
+            <td>본교를 알게된 경로는<br>(중복응답가능)</td>
+            <td colspan="3">
+                <ul>
+                    <li>홈페이지검색</li>
+                    <li>인터넷검색</li>
+                    <li>진로상담 선생님 추천</li>
+                    <li>지인소개</li>
+                    <li>모바일검색</li>
+                    <li>간판</li>
+                    <li>지하철광고</li>
+                    <li>포스터</li>
+                    <li>HRD-NET</li>
+                    <li>고용지원센터소개</li>
+                    <li>기타()</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
