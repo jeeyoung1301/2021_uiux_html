@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-image: url(../images/bg02.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+        input[type="text"]:focus{outline: none;}
+
+        .wrap{
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .searchInp{
+            width: 400px;height: 50px;font-size: 18px;text-indent: 90px;
+            border-radius: 25px;border: 2px solid #000;
+            box-shadow: 5px 5px 0 rgba(0,0,0,1),-5px -5px 0 red;
+        }
+        .searchTitle{
+            display: block;position: absolute;top: 50%;left: 10px;
+            width: 60px;height: 20px;background-image: url(../images/searchtext.jpg);
+            text-indent: -9999px;transform: translateY(-50%);
+        }
+        .searchBtn{
+            position: absolute;right: 10px;top: 50%;
+            transform: translateY(-50%);background: url(../images/search.jpg) no-repeat center;
+            text-indent: -9999px;border-radius: 50%;width: 40px;height: 40px;
+            border: 1px solid #aaa;
+        }
+
+        
+    </style>
 </head>
 <body>
-    
+    <div class="wrap">
+        <form action="#" method="POST">
+            <label for="search" class="searchTitle">search</label>
+            <input type="text" id="search" placeholder="검색어를 입력하세요" class="searchInp">
+            <input type="submit" value="search" class="searchBtn">
+        </form>            
+    </div>
 </body>
 </html>
