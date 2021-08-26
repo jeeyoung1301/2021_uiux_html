@@ -20,13 +20,17 @@
             margin-left: -50px;margin-top: -50px; */
         }
         .container{width: 1000px;margin: 0 auto;}
-        .test1 li{
-            float: left;width: calc((100% - 40px) / 5);
-            background: skyblue;margin-right: 10px;
+        li{
+            float: left;background: skyblue;
+            margin-right: 10px;
             height: 150px;
             display: flex;justify-content: center;align-items: center;
             border-radius: 10px;
         }
+        .test1 li{width: calc((100% - 40px) / 5);}
+        .test2 li{width: calc((100% - 30px) / 4);}
+
+
         .test1 li:last-child{margin-right: 0;}
 
         .mb2{margin-bottom: 2em;}
@@ -37,8 +41,8 @@
     <h1 class="wow fadeInDown">An animated element</h1>
     <div style="height: 2000px;"></div>
     <div class="container test1 mb2">
-        <ul class="clearfix mb2">
-            <li class="wow bounceInLeft" data-wow-delay="0">test</li>
+        <ul class="clearfix">
+            <li class="wow bounceInLeft" data-wow-delay="0" data-wow-offset="0">test</li>
             <li class="wow fadeInDown" data-wow-delay="0.1s">test</li>
             <li class="wow fadeInDown" data-wow-delay="0.2s">test</li>
             <li class="wow fadeInDown" data-wow-delay="0.3s">test</li>
@@ -49,6 +53,16 @@
         <h2 class="wow fadeInLeft" data-wow-delay="0.5s">Lorem, ipsum.</h2>
         <p class="wow fadeInLeft" data-wow-delay="1s">Lorem ipsum dolor sit amet.</p>
     </div>
-    <div style="height: 2000px;"></div>
+
+    <div style="height: 500px;"></div>
+
+    <div class="container test2 mb2">
+        <ul class="clearfix">
+            <li class="wow pulse" data-wow-delay="0s" data-wow-iteration="infinite">test</li>
+            <li class="wow pulse" data-wow-delay="0.1s" data-wow-iteration="infinite">test</li>
+            <li class="wow pulse" data-wow-delay="0.2s" data-wow-iteration="infinite">test</li>
+            <li class="wow pulse" data-wow-delay="0.3s" data-wow-iteration="infinite">test</li>
+        </ul>
+    </div>
 </body>
 </html>
