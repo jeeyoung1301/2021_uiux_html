@@ -10,54 +10,61 @@
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery.bxslider.js"></script>
-
     <script>
-    $(document).ready(function(){
-        $('.slider').bxSlider({
-            pagerCustom:'.bxPager',
-            mode:'vertical'
+        $(document).ready(function(){
+            $('.slider').bxSlider({
+                pagerCustom:'.bxPager',
+                mode:'vertical'
+            });
         });
-    })
     </script>
-
     <style>
+        .bx-wrapper {
+            -moz-box-shadow: 0 none;
+            -webkit-box-shadow: 0 none;
+            box-shadow: 0 none;
+            border:  0 none;
+            margin-bottom:0;
+        }
         .sliderWrap{width: 1240px;margin: 0 auto;position: relative;}
         .sliderWrap .slider .txt{
-            position: absolute;right: 130px;top: 100px;
+            position: absolute;right:130px;top:100px;
             width: 400px;
         }
-        .slider .txt h2{font-size: 1.8rem;margin-bottom: 15px;position: relative;}
-        .slider .txt h2:after{
+        .txt h2{
+            font-size: 1.8em;margin-bottom:15px;
+            position: relative;
+        }
+        .txt h2:after{
             content:"";width: 50px;height: 4px;
-            display: block;background: #000;
+            background: #000;display: block;
             position: absolute;top:-10px;
-            border-radius: 2px;
+            border-radius:2px
         }
-        .slider .txt p{margin-bottom: 30px;}
-        .slider .txt a.btn{
+        .txt p{margin-bottom: 30px;}
+        .txt a.btn{
             display: block;width: 150px;text-align: center;
-            border: 1px solid #000;
-            line-height: 35px;
-            font-size: 12px;
-            border-radius: 18px;
-            transition:0.3s;
+            border: 1px solid #000;line-height: 35px;
+            font-size: 12px;border-radius:28px;
+            transition:0.3s
         }
-        .slider .txt a.btn:hover{background: black;color:white;}
+        .txt a.btn:hover{background: #000;color:white}
 
-        .sliderPager{position: absolute;width: 100%;top:0}
+        .sliderPager{position: absolute;top: 0;width: 300px;height: 728px;}
+        .sliderPager .bxPager{height: 100%;background: #000;}
         .sliderPager .bxPager a{
-            display: block;
-            /* float: left; */
-            height: 25%;
-            /* width: calc(100% / 3); */
+            /* float: left; */display: block;
+            /* width: calc( 100% / 4); */
+            height:25%;
             display: flex;justify-content: center;align-items: center;
-            text-align: center;
-            line-height: 40px;
-            background-color: skyblue;
+            text-align: center;line-height: 40px;
+            background:skyblue;
         }
         .sliderPager .bxPager a.active{background: pink;}
-
+        .sliderPager .bxPager a:hover{background: red;}
+       
     </style>
+
 
 </head>
 <body>
@@ -67,7 +74,7 @@
                 <img src="images/main_slider01.jpg" alt="">
                 <div class="txt">
                     <h2>사랑과 행복을 나누는 마음1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nostrum!</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, aliquam?</p>
                     <a href="#" class="btn">바로가기</a>
                 </div>
             </li>
@@ -75,14 +82,23 @@
                 <img src="images/main_slider01.jpg" alt="">
                 <div class="txt">
                     <h2>사랑과 행복을 나누는 마음2</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nostrum!</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, aliquam?</p>
                     <a href="#" class="btn">바로가기</a>
                 </div>
             </li>
             <li>
-                <img src="images/main_slider01.jpg" alt="">                <div class="txt">
+                <img src="images/main_slider01.jpg" alt="">
+                <div class="txt">
                     <h2>사랑과 행복을 나누는 마음3</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nostrum!</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, aliquam?</p>
+                    <a href="#" class="btn">바로가기</a>
+                </div>
+            </li>
+            <li>
+                <img src="images/main_slider01.jpg" alt="">
+                <div class="txt">
+                    <h2>사랑과 행복을 나누는 마음4</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, aliquam?</p>
                     <a href="#" class="btn">바로가기</a>
                 </div>
             </li>
@@ -92,8 +108,10 @@
                 <a href="#" data-slide-index="0">menu1</a>
                 <a href="#" data-slide-index="1">menu2</a>
                 <a href="#" data-slide-index="2">menu3</a>
+                <a href="#" data-slide-index="3">menu4</a>
             </div>
         </div>
     </div>
+
 </body>
 </html>
