@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.toggleMenu').click(function(){
+                if( $('.toggleMenu').attr('class') == 'toggleMenu'){
+                    $('.toggleMenu').addClass('active');
+                }
+                else{
+                    $('.toggleMenu').removeClass('active');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .topMenu{
+            width: 300px;height: 500px;background: greenyellow;
+            position: absolute;right: 0;
+            display: flex;justify-content: center;align-items: center;
+        }
+        .topMenu .top{width: 200px;}
+        .topMenu a{
+            display: block;text-align: center;
+            width: 100%;line-height: 40px;
+            background: orange;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            color: ivory;
+        }
+
+        .toggleMenu{
+            width: 50px;height: 50px;
+            border: 1px solid #000;
+            position: absolute;top: 16px;right: 16px;
+            z-index: 1;
+        }
+        .toggleMenu div{
+            width: 26px;height: 5px;
+            background: #000;
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;left: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.3s;
+        }
+        .toggleMenu .bar1{top: 12px;}
+        .toggleMenu .bar3{top: 36px;}
+        .toggleMenu.active .bar1{
+            transform: translate(-50%,-50%) rotate(45deg);
+            top: 50%;
+        }
+        .toggleMenu.active .bar3{
+            transform: translate(-50%,-50%) rotate(-45deg);
+            top: 50%;
+        }
+        .toggleMenu.active .bar2{opacity: 0;}
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="topMenu">
+        <div class="top">
+            <a href="#">Lorem.</a>
+            <a href="#">Sunt!</a>
+            <a href="#">Laudantium!</a>
+            <a href="#">Accusantium?</a>
+        </div>
+    </div>
+    <div class="toggleMenu">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    
+    
+</body>
+</html>
