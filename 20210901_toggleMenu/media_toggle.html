@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.toggleMenu').click(function(){
+                
+                var toggle = $('.toggleMenu').attr('class');
+
+                if(toggle == 'toggleMenu'){
+                    $('.toggleMenu').addClass('active');
+                    // $('.myTopMenu').show();
+                    $('.myTopMenu').animate({left:0},300);
+                }
+                else{
+                    $('.toggleMenu').removeClass('active');
+                    // $('.myTopMenu').hide();
+                    $('.myTopMenu').animate({left:'100%'},300);
+                }
+            });
+
+            //1.화면의 사이즈를 변경할때 myTopMenu style의 내용을 삭제해야 웹에서는 myTopMenu가 사라지지 않음
+            //2.화면의 사이즈를 변경할때 toggleMenu의 css active를 삭제
+            // 화면사이즈, 스크롤, 마우스포인터, 버튼클릭 등등은 이벤트 : function(){} 필요함 (리스너가 필요)
+            $(window).resize(function(){ //화면 사이즈 변경
+                // alert('변경마시오');
+                $('.myTopMenu').attr('style','') //myTopMenu style의 내용 삭제명령
+                $('.toggleMenu').removeClass('active'); //toggleMenu의 css active를 삭제 - 안하면 x표시가 있는채로 화면사이즈 조정시 x표시가 계속 남아있음
+            });
+
+        });
+    </script>
+
+    <style>
+        html,body{height: 100%;}
+        .menuWrap{background: #333;}
+        .menuWrap a{color: white;}
+
+        .menuWrap h1{width: 100px;line-height: 50px;text-align: center;padding-left: 16px;}
+        .myTopMenu{position: absolute;left: 120px;top: 0;}
+        .myTopMenu a{display: block;float: left;padding: 14px 10px;}
+
+        .toggleMenu{
+            width: 40px;height: 40px;
+            _border: 2px solid #fff;
+            position: absolute;right: 16px;top: 5px;
+            display: none;
+        }
+        .toggleMenu div{
+            width: 34px;height: 5px;
+            background: #fff;
+            border-radius: 3px;
+            position: absolute;left: 50%;top: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.3s;
+        }
+        .toggleMenu .bar1{top: 8px;}
+        .toggleMenu .bar3{top: 32px;}
+
+        .toggleMenu.active .bar1{transform: translate(-50%,-50%) rotate(45deg);top: 50%;}
+        .toggleMenu.active .bar3{transform: translate(-50%,-50%) rotate(-45deg);top: 50%;}
+        .toggleMenu.active .bar2{opacity: 0;}
+
+        @media screen and (min-width:900px){
+            .menuWrap{
+                width: 1200px;position: fixed; /* fixed하면 글씨 위로 올라감  */
+                left: calc(50% - 600px); /* w1200의 반만큼 빼주기  */
+                /* top: 10px; */
+            }
+            
+        }
+
+        @media screen and (min-width:600px) and (max-width:899px){
+            body{background: orange;}
+        }
+
+        @media screen and (max-width:599px){
+            body{background: pink;}
+            .toggleMenu{display: block;position: fixed;}
+            .myTopMenu{
+                width: 100%;height: 100%;
+                background: skyblue;
+                position: fixed;top: 0;left: 100%;
+                display: flex;justify-content: center;align-items: center;
+            }
+            .myTopMenu a{float: none;} /* float:left 를 해제시켜주기  */
+            .topNav{transform: translateY(-30px);text-align: center;}
+        }
+    </style>
+</head>
+<body>
+    <div class="menuWrap">
+        <h1><a href="#">LOGO</a></h1>
+        <div class="myTopMenu">
+            <nav class="topNav clearfix">
+                <a href="#"><i class="fas fa-home"></i> HOME</a>
+                <a href="#"><i class="fas fa-book-reader"></i> NEWS</a>
+                <a href="#"><i class="fas fa-archive"></i> PRODUCT</a>
+                <a href="#"><i class="fas fa-comment-alt"></i> COMMUNITY</a>
+            </nav>
+        </div>
+        <div class="toggleMenu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </div>
+    <div>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex aperiam quis et iusto cumque consectetur. Cum eos pariatur et! Qui facilis assumenda pariatur eos quas architecto quos dolorem illo vero illum explicabo magni laborum maxime quia est eligendi, quidem repellendus ea rerum numquam? Neque, illo dolores. Nam reprehenderit, quia iure, ad sequi inventore iusto quidem quo saepe totam, voluptatum maiores. Voluptatem alias, incidunt eum unde consectetur mollitia, perspiciatis sunt iste, optio saepe sed temporibus provident quasi cum nam at ipsam dolore nihil eos. Pariatur eligendi distinctio molestiae quam inventore vel sit quos deleniti eaque, minus non. Sapiente quisquam repellendus exercitationem officiis fugit nihil incidunt quia? Numquam ipsa, asperiores doloremque cumque repudiandae dolor aperiam doloribus ut rerum in quod exercitationem dolore eum. Ipsam, quo ut. Consequuntur, quidem sapiente. Ad numquam non consequatur quas ratione, adipisci saepe alias, blanditiis exercitationem facere ea tempore, odio hic quidem tenetur omnis nemo. Reiciendis, corporis doloribus. Assumenda officia dolore facere a quidem commodi, asperiores, atque reiciendis qui reprehenderit perferendis temporibus sunt? Magnam labore suscipit velit vitae corrupti cumque sequi tempore similique harum dicta, porro mollitia, eius ipsa eum officiis quia neque, unde commodi veritatis eos! Dolor alias pariatur ducimus rerum, itaque iste nostrum architecto cupiditate inventore, ipsum, dolores voluptatum facere minima! Cum possimus eaque inventore facere nobis tempora aliquam fugiat at nulla quas eligendi voluptates, id aliquid asperiores minima similique, fugit soluta quae iste temporibus illum quia repellat eveniet cumque. Hic deleniti quia mollitia, quidem aut fugiat quos amet beatae odit veniam consequatur accusamus exercitationem, cupiditate vel. Accusamus quos aliquam laudantium accusantium beatae repellat ipsa velit quidem officiis consequuntur aperiam recusandae ipsum, quod magnam ab totam cum iusto nobis amet modi, blanditiis est quisquam! Expedita ipsum natus ut vitae impedit earum, libero explicabo voluptatem esse unde placeat, itaque rem rerum qui a quia, consequuntur minus laudantium incidunt. Rem ad harum fugiat incidunt id, laudantium explicabo earum rerum, maiores facilis officia! Sint beatae iusto, doloremque, ad quo aut repellendus omnis hic magni exercitationem doloribus ea deserunt accusamus ullam quisquam repellat eligendi, illum maxime quod. Eaque blanditiis qui aperiam. Dolor inventore modi sint nesciunt amet beatae quidem perspiciatis ipsum tempore molestiae voluptates officiis, iure, omnis perferendis autem, incidunt labore explicabo veniam nisi possimus aspernatur. Magni recusandae rem maiores totam non, consequuntur vitae, accusamus suscipit nesciunt quo temporibus soluta ipsum nobis ratione amet, exercitationem officia perferendis aliquid enim provident quae. Quidem placeat, nisi assumenda aliquid reiciendis tempore voluptatibus corporis et sint officia nobis dolorem similique? At, provident obcaecati quia ex delectus ratione ipsa soluta, nihil, quaerat non maiores commodi! Ratione reprehenderit nam aliquid aut error, libero saepe, dolores cumque magni exercitationem a cum esse ex sunt illo earum eius excepturi, voluptate blanditiis rerum corporis in sequi molestiae unde! Velit ab iusto commodi minima reprehenderit cupiditate mollitia. Magnam, sequi quod facilis animi corrupti officia? Illum culpa vitae, sed ex placeat, aliquam beatae molestias id, obcaecati vel totam neque dolorem officiis quidem? Adipisci neque inventore voluptates ipsum perferendis sit. At qui excepturi voluptate nesciunt, quam sapiente. Blanditiis a voluptas voluptate voluptatibus at! Labore ad optio dignissimos hic, earum, recusandae est accusamus dolorum saepe, dolor soluta suscipit tempore iure mollitia qui fugit accusantium beatae eius voluptatem obcaecati sequi dolores illum! In voluptas animi quasi non est, ex neque assumenda, saepe maxime quod ipsum quaerat dicta eius quos? Cum, expedita provident doloribus ad repellat minus dolores ex cupiditate minima aspernatur rem labore deleniti dolorum debitis maiores tempore placeat rerum voluptates voluptatem autem tenetur exercitationem velit! Adipisci explicabo quisquam nobis facere numquam non velit possimus sed laborum cupiditate rerum qui illum, sint voluptate, fuga ullam ipsum ut ipsa, quis harum maxime nesciunt vero? Distinctio sit vitae quas eaque deserunt iusto dolorem commodi ullam enim eos, omnis illum laborum tempore dolorum obcaecati similique eius atque pariatur, soluta expedita reprehenderit labore totam aliquid! Voluptate accusamus quidem nemo quos animi blanditiis enim cum quod velit reiciendis? Dignissimos similique hic natus nihil fugiat temporibus accusamus ea laboriosam. Nobis ducimus pariatur tempora dolorem iusto earum consequatur possimus modi eos, dicta quam eum similique magnam voluptatem error necessitatibus obcaecati recusandae ea praesentium? Illum necessitatibus reprehenderit voluptatem beatae, quaerat pariatur hic, doloribus veritatis quo incidunt nobis, obcaecati est natus quasi molestias consequuntur tempore numquam aut dolore similique ratione iure! Mollitia ipsum aliquid incidunt porro eveniet asperiores minus maiores itaque voluptas quis, libero sequi culpa dolore! Odit quaerat rem ullam consequuntur blanditiis eos enim excepturi tempore sit quas sequi placeat, repellat libero nihil velit nemo qui molestiae saepe accusantium voluptate id, neque deleniti. Voluptates explicabo molestiae consectetur dignissimos? Quod dolores minus quo sit? Excepturi facere quod velit ad impedit laudantium, dolorum neque nostrum iure, quisquam aspernatur aliquam illo laboriosam est hic voluptatum aliquid assumenda? Numquam maiores dignissimos, animi natus consequuntur neque blanditiis, corrupti obcaecati, repellendus quae totam fugiat debitis facere optio. Quaerat odio ut placeat, rerum repudiandae laborum quae sint illo in esse voluptates, dolor deserunt provident iure labore dolores incidunt ducimus voluptatum soluta iste. Quia recusandae expedita doloremque illo, est vitae maiores ullam itaque, veniam dolore quas provident, placeat hic veritatis maxime aspernatur cumque cum omnis sunt. Ab repellat dolorum asperiores hic dolor, accusamus cum perspiciatis quos qui quasi. Fugit aliquid ullam officia, nemo asperiores doloribus iusto itaque laborum rem aut reprehenderit, inventore iste quidem a maiores temporibus. Quaerat, rem porro possimus officia nulla mollitia ut obcaecati assumenda officiis magnam sint, non quos iste molestias, temporibus hic quo animi beatae dolores quod quibusdam veniam atque consectetur cum. Ut aperiam provident soluta? Nesciunt quibusdam libero odio vero sit dicta dolorem impedit sapiente est perferendis iusto sunt beatae doloremque earum molestias, ullam ab exercitationem, culpa et dolore. Aspernatur doloremque error libero animi officiis optio ut, assumenda corporis magnam iure quidem! Necessitatibus tenetur eaque veritatis mollitia neque commodi doloribus quis sequi deserunt ea explicabo dignissimos perferendis quae animi nostrum minus voluptates quia illo placeat, laudantium aliquid fugit accusamus delectus repellendus. Culpa, velit praesentium reiciendis laudantium corporis porro nemo enim, labore quidem amet ea sunt commodi vel soluta, repellat cumque eos doloremque eius. Voluptatem quidem sunt quam? Dignissimos autem perferendis harum sapiente doloremque nulla accusamus.
+    </div>
+</body>
+</html>
