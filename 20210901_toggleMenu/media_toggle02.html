@@ -12,8 +12,22 @@
     <script>
         $(document).ready(function(){
             $('.toggleMenu').click(function(){
-                var toggle = $('.toggleMenu').attr('class')
-            })
+                var toggle = $('.toggleMenu').attr('class');
+
+                if(toggle == 'toggleMenu'){
+                    $('.toggleMenu').addClass('active');
+                    $('.myTopMenu').animate({left:0},300);
+                }
+                else{
+                    $('.toggleMenu').removeClass('active');
+                    $('.myTopMenu').animate({left:'100%'},300);
+                }
+            });
+
+            $(window).resize(function(){
+                $('.myTopMenu').attr('style','');
+                $('.toggleMenu').removeClass('active');
+            });
         })
     </script>
 
@@ -21,11 +35,16 @@
         html,body{height: 100%;}
         .menuWrap{background: #333;}
         .menuWrap a{color:white;}
+
         .menuWrap .myTopMenu{position: absolute;top: 0;left: 120px;}
         .menuWrap .myTopMenu a{display: block;float: left;padding: 14px 10px;}
         .menuWrap h1{width: 100px;line-height: 50px;text-align: center;padding-left: 16px;}
 
-        .toggleMenu{width: 50px;height: 50px;_border: 2px solid #fff;position: absolute;top: 0;right: 16px;}
+        .toggleMenu{
+            width: 50px;height: 50px;_border: 2px solid #fff;
+            position: absolute;top: 0;right: 16px;
+            display: none;
+        }
         .toggleMenu div{
             width: 30px;height: 5px;border-radius: 3px;
             background: #fff;
@@ -45,9 +64,18 @@
         }
         @media screen and (min-width:600px) and (max-width:899px){
             body{background: orange;}
+
         }
         @media screen and (max-width:599px){
             body{background: pink;}
+            .toggleMenu{display: block;position: fixed;}
+            .menuWrap .myTopMenu{
+                height: 100%;background-color: skyblue;width: 100%;
+                display: flex;align-items: center;justify-content: center;
+                position: fixed;top: 0;left: 100%;
+            }
+            .menuWrap .myTopMenu a{float: none;text-align: center;}
+            .topNav{transform: translateY(-30px);}
         }
 
     </style>
