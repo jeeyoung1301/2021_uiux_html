@@ -27,19 +27,22 @@
         }
         .gnb>ul>li{
             float: left;width: calc(100% / 4);
-            background: skyblue;transition: 0.3s;
+            transition: 0.3s;
             position: relative;
         }
-        .gnb>ul>li>a{display: block;line-height: 40px;text-align: center;position: relative;;z-index: 1;background: skyblue;}
+        .gnb>ul>li>a{
+            display: block;line-height: 40px;
+            text-align: center;position: relative;
+            z-index: 1;background: skyblue;
+        }
         .gnb>ul>li:hover>a{background: pink;}
 
         .gnb>ul>li:hover .submenu{top: 40px;}
-
+        .submenu{position: absolute;top: -200%;width: 100%;background: pink;transition: 0.3s;}
         .submenu a{display: block;text-align: center;line-height: 30px;font-size: 14px;transition: 0.3s;}
         /* .submenu{position: absolute;background: pink;width: 100%;} */
         .submenu a:hover{background: orange;}
 
-        .submenu{position: absolute;top: -200%;width: 100%;background: pink;transition: 0.3s;}
 
         .bx-wrapper{position: absolute;top: 0;box-shadow: none;border: none;}
         .bx-controls{position: relative;}

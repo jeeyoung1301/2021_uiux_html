@@ -6,15 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/jquery.bxslider.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery.bxslider.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').bxSlider({});
+        });
+    </script>
     
     <style>
-        /* .gnb{position: absolute;} */
-        .gnb>ul{width: 1000px;background: skyblue;margin: 0 auto;}
-        .gnb>ul>li{float: left;width: calc(1000px / 4);}
-        .gnb>ul>li .submenu{display: none;}
-        .gnb>ul>li:nth-child(1) .submenu{display: block;width: calc(1000px / 4);}
+        .gnb{
+            width: 1000px;margin: 0 auto;
+            position: absolute;top: 0;
+            z-index: 1;
+            left: 50%;transform: translateX(-50%);
+        }
+        .gnb>ul>li{float: left;width: calc(1000px / 4);transition: 0.3s;position: relative;}
+        .gnb>ul>li>a{
+            display: block;line-height: 40px;
+            text-align: center;background: #F6F5EF;
+            position: relative;z-index: 1;
+        }
 
-        .visual{background: greenyellow;height: 300px;}
+        .gnb>ul>li:hover>a{background: #DAB89C;}
+        /* .gnb>ul>li .submenu{display: none;} */
+        .gnb>ul>li:hover>.submenu{top: 40px;}
+        .submenu{position: absolute;top: -300%;width: 100%;background: #DAB89C;transition: 0.3s;}
+        .submenu>li>a{display: block;line-height: 40px;text-align: center;transition: 0.3s;font-size: 14px;}
+        .submenu a:hover{background: #F3D2AD;}
+
+
+        .slider img{width: 100%;}
+        .bx-wrapper{position: absolute;top: 0;box-shadow: none;border: none;}
+        .bx-controls{position: relative;}
+        .bx-pager{position: absolute;top: -60px;}
+
     </style>
 </head>
 <body>
@@ -58,6 +86,10 @@
             </li>
         </ul>
     </nav>
-    <div class="visual"></div>
+    <ul class="slider">
+        <li><img src="../images/pc01.jpg" alt=""></li>
+        <li><img src="../images/pc02.jpg" alt=""></li>
+        <li><img src="../images/pc03.jpg" alt=""></li>
+    </ul>
 </body>
 </html>
