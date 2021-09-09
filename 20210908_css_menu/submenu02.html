@@ -41,18 +41,23 @@
 
         /* .gnb>ul>li:first-child .submenu{display: block;} */
         .gnb>ul>li:hover .submenu{display: block;}
-        .submenu{position: absolute;background: #654ea3;z-index: 1;}
+        /* .submenu{position: absolute;background: #654ea3;z-index: 1;} */
         .submenu>li{float: left;padding: 5px 10px;}
         .submenu a{color: white;display: block;line-height: 30px;}
+
+        .subWrap{margin: 0 auto;}
         
-        .gnb>ul>li:nth-child(2) .submenu{left: 120px;}
+        /* .gnb>ul>li:nth-child(2) .submenu{left: 20px;}
         .gnb>ul>li:nth-child(3) .submenu{left: 50%;transform: translateX(-50%);}
         .gnb>ul>li:nth-child(4) .submenu{left: calc(50% + 30px);}
-        .gnb>ul>li:nth-child(5) .submenu{right: 0;}
+        .gnb>ul>li:nth-child(5) .submenu{right: 0;} */
 
         /* .bar{width: 100%;;height: 40px;background: #654ea3;position: absolute;display: none;}
         .gnb:hover .bar{display: block;} */
-        .gnb>ul>li:hover .subWrap{width: 100%;background: #654ea3;position: absolute;z-index: 1;height: 40px;}
+        .gnb>ul>li:hover .subWrap{
+            width: 100%;background: #654ea3;position: absolute;z-index: 1;height: 40px;
+        }
+        .gnb>ul>li .subWrap{left: 0;}
         
     </style>
 </head>
@@ -73,39 +78,47 @@
                 </li>
                 <li>
                     <a href="#">MENU2</a>
-                    <ul class="submenu clearfix">
-                        <li><a href="#">sub02_01</a></li>
-                        <li><a href="#">sub02_02</a></li>
-                        <li><a href="#">sub02_03</a></li>
-                        <li><a href="#">sub02_04</a></li>
-                    </ul>
+                    <div class="subWrap">
+                        <ul class="submenu clearfix">
+                            <li><a href="#">sub02_01</a></li>
+                            <li><a href="#">sub02_02</a></li>
+                            <li><a href="#">sub02_03</a></li>
+                            <li><a href="#">sub02_04</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <a href="#">MENU3</a>
-                    <ul class="submenu clearfix">
-                        <li><a href="#">sub03_01</a></li>
-                        <li><a href="#">sub03_02</a></li>
-                        <li><a href="#">sub03_03</a></li>
-                        <li><a href="#">sub03_04</a></li>
-                    </ul>
+                    <div class="subWrap">
+                        <ul class="submenu clearfix">
+                            <li><a href="#">sub03_01</a></li>
+                            <li><a href="#">sub03_02</a></li>
+                            <li><a href="#">sub03_03</a></li>
+                            <li><a href="#">sub03_04</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <a href="#">MENU4</a>
-                    <ul class="submenu clearfix">
-                        <li><a href="#">sub04_01</a></li>
-                        <li><a href="#">sub04_02</a></li>
-                        <li><a href="#">sub04_03</a></li>
-                        <li><a href="#">sub04_04</a></li>
-                    </ul>
+                    <div class="subWrap">
+                        <ul class="submenu clearfix">
+                            <li><a href="#">sub04_01</a></li>
+                            <li><a href="#">sub04_02</a></li>
+                            <li><a href="#">sub04_03</a></li>
+                            <li><a href="#">sub04_04</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <a href="#">MENU5</a>
-                    <ul class="submenu clearfix">
-                        <li><a href="#">sub05_01</a></li>
-                        <li><a href="#">sub05_02</a></li>
-                        <li><a href="#">sub05_03</a></li>
-                        <li><a href="#">sub05_04</a></li>
-                    </ul>
+                    <div class="subWrap">
+                        <ul class="submenu clearfix">
+                            <li><a href="#">sub05_01</a></li>
+                            <li><a href="#">sub05_02</a></li>
+                            <li><a href="#">sub05_03</a></li>
+                            <li><a href="#">sub05_04</a></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
             <div class="bar"></div>
