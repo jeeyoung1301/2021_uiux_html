@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <style>
+        .table li{float: left;}
+    </style>
+</head>
+<body>
+    <script>
+        //첫번째 방법!
+        const member = ['홍길동','김철수','김영희']
+        const kor = [80,50,79];
+        const eng = [78,66,92];
+        
+        for(let i=0;i<member.length;i++){
+            // document.write(member[i]+'<br>');
+            document.write(
+                `
+                <ul class="table clearfix">
+                    <li>${member[i]}</li>
+                    <li>${kor[i]}</li>
+                    <li>${eng[i]}</li>
+                </ul>`
+                )
+        }
+        
+
+        //두번째 방법!(더 쉬움)
+        const member1 = [
+            {name:'홍길동',kor:80,eng:78},
+            {name:'김철수',kor:50,eng:79},
+            {name:'김영희',kor:79,eng:92}
+        ]
+        let memTotal = "";
+        for(let i=0;i<member1.length;i++){
+            // memTotal = memTotal + member1[i].name;
+            memTotal += `
+            <ul class="table clearfix">
+                <li>${member1[i].name}</li>
+                <li>${member1[i].kor}</li>
+                <li>${member1[i].eng}</li>
+            </ul>`;
+        }
+        document.write(memTotal)
+    </script>
+</body>
+</html>
