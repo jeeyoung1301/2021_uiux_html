@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+
+    <style>
+        .box span{color: yellow;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum <span>dolor</span> sit amet consectetur adipisicing elit. 
+        Necessitatibus <span>similique</span> minima nulla provident a aut est <span>debitis</span> aliquam accusantium <span>quam!</span>
+    </div>
+    <span>test</span>
+    <button class="btn">클릭</button>
+    <script>
+        // 버튼 class의 .btn을 클릭해서 리스너등록해서 .box의 폰트색을 red로 변경
+        const btn = document.getElementsByClassName('btn');//elements s이기 때문에 btn.onclick안되고 btn[0]
+        const box = document.getElementsByClassName('box');
+        const span = document.getElementsByTagName('span');
+        const spanSel = document.querySelectorAll('.box span');//.box안의 span태그만 모두 선택
+        // const spanAll = document.getElementsByClassName('box')[0].getElementsByTagName('span')//위랑 같음
+        const spanAll = box[0].getElementsByTagName('span')//위랑 같음
+
+        // 2번.리스너를 함수(프로퍼티)로 등록
+        // btn[0].onclick = onBox;
+        // function onBox(){
+        //     box[0].style.color = 'red';
+        // };//함수 이름 정해서 실행
+
+        // btn[0].onclick = function(){
+        //     box[0].style.color = 'red';
+        // } //함수 이름 없이 실행
+
+
+        //3번.addEventListener() 메소드 활용
+        btn[0].addEventListener('click',function(){
+            box[0].style.color = 'blue';
+            box[0].style.fontSize = '40px';
+            // span[3].style.color = 'red';
+            for(let i=0;i<span.length;i++){
+                span[i].style.color = 'red'
+            }
+            // for(let i=0;i<spanSel.length;i++){
+            //     spanSel[i].style.color = 'pink'
+            // }
+            for(let i=0;i<spanAll.length;i++){
+                spanAll[i].style.color = 'pink'
+            }
+        });
+
+        btn[0].addEventListener('click',onBox);//함수 이름 설정
+        function onBox(){}
+
+
+        // $('.btn').click(function(){
+        //     $('.box span').css('color','red')
+        // }); //제이쿼리 - 짧은 대신 library필요함 (jquery-3.1.1.min)
+
+
+    </script>
+</body>
+</html>
