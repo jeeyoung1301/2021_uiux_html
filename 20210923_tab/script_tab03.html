@@ -20,6 +20,8 @@
         .tab li.on{
             background-color: skyblue;
         }
+        .box div{display: none;width: 200px;padding: 20px;}
+        .box div:first-child{display: block;}
     </style>
 </head>
 <body>
@@ -29,17 +31,35 @@
         <li>tab3</li>
         <li>tab4</li>
     </ul>
+    <div class="box">
+        <div>1Lorem ipsum dolor sit amet.</div>
+        <div>2Provident magnam eius beatae aspernatur.</div>
+        <div>3Dolorum sint praesentium qui! Assumenda!</div>
+        <div>4Dolores quasi atque placeat repudiandae.</div>
+    </div>
 
     <script>
         const tabList = document.querySelectorAll('.tab li');
+        const boxList = document.querySelectorAll('.box div');
+
         for (let j=0;j<tabList.length;j++){
-            tabList[j].addEventListener('click',function(){
-            for (let i=0;i<tabList.length;i++){
-                tabList[i].classList.remove('on');
+            tabList[j].onclick = function(){
+            for(let i=0;i<tabList.length;i++){
+                tabList[i].classList.remove('on'); // addClass()  removeClass('on') -제이쿼리
+                boxList[i].style.display = 'none'
             };
+            // this.classList.add('on')  //this=tabList[0]
             tabList[j].classList.add('on');
-        });
+            boxList[j].style.display = 'block' 
+            };
+
         };
+
+
+
+        
+
+        
         
     </script>
 </body>
