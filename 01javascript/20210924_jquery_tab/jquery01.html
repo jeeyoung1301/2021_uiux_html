@@ -1,22 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="../js/jquery-3.1.1.min.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $('p').hide()
+      $(document).ready(function () {
+        // $('p').hide()
+        // $('p').eq(0).hide().show() //$(''): DOM , eq : 몇 번째
+        $("p").eq(0).css("background-color", "skyblue"); //set
+        let pBg = $("p").eq(0).css("background-color"); //get
+        console.log(pBg);
+        console.log($("p").length);
+
+        $(".btn").on("click", function () {
+          $("p").eq(1).css({
+            background: "green",
+            color: "white",
+            border: "1px solid #000",
+          });
         });
+
+        // $('').on('click',function(){
+        //     $('').eq(0).css({background: 'green', , ,});
+        // });
+        // on: 준비
+
+        // $(".btn1").click(function () {
+        //   $("p").eq(1).css({
+        //     background: "initial",
+        //     color: "initial",
+        //     border: "initial",
+        //   });
+        // });
+
+        $(".btn1").click(function () {
+          $("p").eq(1).attr("style", "");
+        });
+      });
     </script>
-</head>
-<body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum perferendis rerum nostrum dolorum quae quasi exercitationem sapiente atque quia dolor doloribus libero aliquam, in minus sed ipsam, magnam sequi voluptatem.</p>
-    <p>Fuga, nam voluptatum alias iusto ea dolorum architecto minima soluta eos maxime accusantium obcaecati, veniam, inventore tempora id. Veniam, tenetur facilis qui aliquid odio a debitis molestias temporibus quo tempora?</p>
-    <p>Harum asperiores unde laborum quaerat hic reiciendis laboriosam pariatur, facere at qui doloribus, doloremque rerum! Error accusantium nam cupiditate numquam a beatae laborum omnis non, vero magnam cum dolore laboriosam?</p>
-    <p>Veritatis corrupti mollitia consectetur natus ipsa quo, distinctio, enim quidem tempora maxime consequuntur accusamus asperiores optio porro, nulla recusandae at itaque. Aspernatur temporibus asperiores ipsam fuga, modi mollitia officia atque.</p>
-</body>
+  </head>
+  <body>
+    <button class="btn">변경</button>
+    <button class="btn1">원래대로</button>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum perferendis
+      rerum nostrum dolorum quae quasi exercitationem sapiente atque quia dolor
+      doloribus libero aliquam, in minus sed ipsam, magnam sequi voluptatem.
+    </p>
+    <p>
+      Fuga, nam voluptatum alias iusto ea dolorum architecto minima soluta eos
+      maxime accusantium obcaecati, veniam, inventore tempora id. Veniam,
+      tenetur facilis qui aliquid odio a debitis molestias temporibus quo
+      tempora?
+    </p>
+    <p>
+      Harum asperiores unde laborum quaerat hic reiciendis laboriosam pariatur,
+      facere at qui doloribus, doloremque rerum! Error accusantium nam
+      cupiditate numquam a beatae laborum omnis non, vero magnam cum dolore
+      laboriosam?
+    </p>
+    <p>
+      Veritatis corrupti mollitia consectetur natus ipsa quo, distinctio, enim
+      quidem tempora maxime consequuntur accusamus asperiores optio porro, nulla
+      recusandae at itaque. Aspernatur temporibus asperiores ipsam fuga, modi
+      mollitia officia atque.
+    </p>
+    <script>
+      // for(let i=0;i<4;i++){
+      //     document.getElementsByTagName('p')[0].style.display = 'none';
+      // }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        .tab li{
+            float: left;
+            padding: 10px 20px;
+        }
+        .tab li.on{background: skyblue;}
+        .con div{display: none;}
+        .con div:first-child{display: block;}
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            // $('ul>li').eq(0).click(function(){
+            //     console.log('click');
+            //     $('ul>li').removeClass();
+            //     // $('ul>li').eq(0).removeClass();
+            //     // $('ul>li').eq(1).removeClass();
+            //     // $('ul>li').eq(2).removeClass();
+            //     // $('ul>li').eq(3).removeClass();
+
+            //     $('ul>li').eq(0).addClass('on');
+            // });
+            // $('ul>li').eq(1).click(function(){
+            //     $('ul>li').removeClass();
+            //     $('ul>li').eq(1).addClass('on');
+            // });
+            // $('ul>li').eq(2).click(function(){
+            //     $('ul>li').removeClass();
+            //     $('ul>li').eq(2).addClass('on');
+            // });
+            // $('ul>li').eq(3).click(function(){
+            //     $('ul>li').removeClass();
+            //     $('ul>li').eq(3).addClass('on');
+            // });
+
+            // for (let i=0;i<$('ul>li').length;i++){
+            //     $('ul>li').eq(i).click(function(){
+            //         $('ul>li').removeClass();
+            //         $('ul>li').eq(i).addClass('on');
+            //     });
+            // };
+
+            $('ul>li').click(function(){
+                // console.log($(this).index());
+
+                let num = $(this).index();
+                $('ul>li').removeClass('on'); //li 전체 다 removeClass
+                $(this).addClass('on'); // 클릭한 li에 addClass
+
+                $('.con>div').hide(); 
+                $('.con>div').eq(num).fadeIn();
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul class="tab clearfix">
+        <li class="on">menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    <div class="con">
+        <div>1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. At hic non rerum aperiam quae sunt recusandae dicta dolorem rem sint necessitatibus animi in voluptatum vel perferendis laboriosam, laudantium enim tempore?</div>
+        <div>2 Nemo, impedit eligendi. Neque quo inventore soluta doloremque molestias? Aperiam consequuntur atque incidunt beatae rem ab a quaerat soluta recusandae magni dignissimos et veritatis, totam repellat hic, dolor obcaecati. Optio.</div>
+        <div>3 Vitae possimus labore blanditiis facere quis unde velit. Deleniti officia rerum nam quas dignissimos impedit accusantium omnis ratione provident itaque ipsa vitae asperiores necessitatibus, officiis recusandae quis porro, cum possimus.</div>
+        <div>4 Ab pariatur ipsam sed, itaque, sit doloremque qui cum corrupti dolores dolore veniam quidem? Beatae error, molestias deleniti maiores id placeat rerum, odio repudiandae, nemo maxime voluptatum dolor quaerat quasi.</div>
+    </div>
+</body>
+</html>
