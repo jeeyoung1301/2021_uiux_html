@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onwheel = 'wheel(event,this)'>
+    <!-- <span onmousedown="down()" class="event">이벤트</span>가 발생합니다. -->
+    <span 
+    onmousedown="down(this)"
+    onmouseup="up(this)"
+    onmouseover="over(this)"
+    onmouseout="out(this)"
+    class="event">이벤트</span>가 발생합니다.
+    <script>
+        // const mEv = document.querySelector('.event'); //this 안쓰면 필요
+        // function down(){
+        //     mEv.style.fontStyle = 'italic'
+        // }
+        let width = 1;
+        const mEv = document.querySelector('.event')
+
+        function down(obj){
+            obj.style.fontStyle = 'italic'
+        }
+        function up(obj){
+            obj.style.fontStyle = 'normal'
+        }
+        function over(obj){
+            obj.style.borderColor = 'skyblue'
+        }
+        function out(obj){
+            obj.style.borderColor = 'red'
+        }
+
+        function wheel(event,obj){
+            if(event.wheelDelta < 0){
+                console.log('마우스휠 내림')
+                width--;
+                if(width < 1) {width=1}
+            }
+            else{
+                console.log('마우스올림')
+                width++;
+            }
+            mEv.style.borderStyle = 'ridge';
+            mEv.style.borderWidth = width + 'px';
+        }
+    </script>
+</body>
+</html>

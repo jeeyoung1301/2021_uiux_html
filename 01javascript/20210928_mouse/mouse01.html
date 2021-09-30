@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt vel aut officia dolorum perspiciatis, assumenda nemo, dignissimos fugiat tenetur blanditiis eligendi molestias architecto repellendus. Qui impedit ducimus dolore molestiae optio!
+    <img src="../images/testing.jpg" alt="" onmousemove="where(event)">
+    <div class="info"></div>
+
+    <script>
+        const info = document.querySelector('.info');
+        function where(event){
+            // console.log(event.clientX)
+            let txt = '';
+            txt+= `
+            clientX : ${event.clientX}, clientY : ${event.clientY}<br>
+            offsetX : ${event.offsetX}, offsetY : ${event.offsetY}
+            `;
+
+            info.innerHTML = txt;
+        }
+    </script>
+</body>
+</html>
