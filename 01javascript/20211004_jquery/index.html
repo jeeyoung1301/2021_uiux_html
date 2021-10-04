@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        .box{background: yellow;}
+    </style>
+
+    <script>
+        // btn 클릭하면 p태그를 숨김
+        $(document).ready(function(){
+            $('.btn').click(function(){
+
+                const tHtml = '홍길동';
+                $("p").hide();
+                // $('body').append('<div class="box">자식노드추가</div>');
+                $('body').append(`<div class="box">${tHtml}</div>`);
+            });
+
+            
+            $('body').prepend('자식노드추가1')
+        }) 
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <button class="btn">클릭</button>
+
+    <!-- <script>
+        const btn = document.querySelector('.btn');
+        const pTag = document.querySelector("p");
+        btn.onclick = function(){
+            pTag.style.display = 'none';
+        };
+    </script> -->
+</body>
+</html>
