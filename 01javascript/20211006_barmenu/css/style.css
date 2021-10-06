@@ -1,0 +1,84 @@
+@charset "utf-8"
+
+/* reset css */
+*{padding: 0;margin: 0;box-sizing: border-box;}
+li{list-style: none;}
+a:visited,a:link{color: black;text-decoration: none;}
+.clearfix:after{content: "";display: block;clear: both;}
+img{display: block;}
+
+.nav{
+    width: 1000px;
+    margin: 0 auto;
+}
+.nav h1{
+    text-align: center;
+}
+.menu li{
+    float: left;
+    width: 20%;
+    background-color: rgb(223, 246, 255);
+    position: relative;
+    padding: 3px 0;
+}
+.menu li.active:before,
+.menu li:hover:before{
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: skyblue;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.menu li:before{
+    content: "";
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+.menu li > a{
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
+.bar{
+    width: 200px;
+    height: 5px;
+    background: skyblue;
+    position: relative;
+    top: -5px;
+    left: calc(200px * 0);
+    transition: 0.3s;
+}
+
+.visual{
+    height: 200px;
+    background-color: rgb(250, 229, 248);
+    position: relative;
+    top: -5px;
+}
+.visual h2{
+    text-align: center;
+    position: relative;
+    top: 35%;
+}
+.visual.sub1{
+    background-color: rgb(227, 248, 219);
+}
+.visual.sub2{
+    background-color: rgb(252, 255, 203);
+}
+.visual.sub3{
+    background-color: rgb(255, 219, 172);
+}
+.visual.sub4{
+    background-color: rgb(203, 219, 255);
+}
+.visual.sub5{
+    background-color: rgb(255, 198, 208);
+}
