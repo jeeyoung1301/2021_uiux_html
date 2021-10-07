@@ -20,12 +20,14 @@ function nowMenu(menu){ // main이 menu로 들어감 menu = 'main'
             if(menu == 'main'){
                 $('.bar').css('opacity',1)
             };
+
             $('.bar').css('left',200*menuLi)
         },
         function(){
             if(menu == 'main'){
                 $('.bar').css('opacity',0)
             };
+            
             $('.bar').css('left',200*menu)
         });
 };
