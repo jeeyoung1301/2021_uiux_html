@@ -39,10 +39,26 @@
 
             $('.carOff').html(`x=${carOff.left}px, y=${carOff.top}px`)//resize 넣어야 계속 값 변함
 
-            const bWidth = $('body').width();
-            if(bWidth < 1000){
-                $('body').css('background-color','yellow')
+            let bWidth = $('body').width();
+            console.log(bWidth)
+            function wView(){
+                if(bWidth < 1000){
+                    $('body').css('background-color','yellow')
+                }
+                else{
+                    $('body').css('background-color','initial')
+                }
             }
+
+            wView(); // 문서시작시 시작
+
+            $(window).resize(function(){
+                bWidth = $('body').width();
+                console.log(bWidth)
+                wView()//리사이즈시 시작
+            });
+            // script: window.onresize = function(){} 
+            // script: window.addEventListner('resize',function(){})
         });
     </script>
 </head>
