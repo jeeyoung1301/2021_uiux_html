@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery.mousewheel.min.js"></script>
+
+    <style>
+        .menu{
+            width: 100%;
+            background: #ccc;
+        }
+        .menu.fixed{
+            position:fixed;
+            background: skyblue;
+        }
+        .menu.fixed a{
+            line-height: 40px;
+        }
+        .menu ul{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .menu li{
+            float: left;
+            width: 20%;
+        }
+        .menu li a{
+            display: block;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .content{
+            height: 3000px;
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        // $(function(){})
+        $(document).ready(function(){
+            // event: mouse event / delta: mousewheel value(up:1,down:-1) 
+            $(document).mousewheel(function(e,delta){
+                console.log(delta)
+
+                $(window).scroll(function(){
+                let scrollY = $(window).scrollTop(); // scroll value //script: window.pageYOffset
+                if (scrollY > 200){
+                    // $('.menu').addClass('fixed')
+                    if(delta > 0){
+                        $('.menu').addClass('fixed')
+                    }
+                    else{
+                        $('.menu').removeClass('fixed')
+                    }
+                }
+                else{
+                    $('.menu').removeClass('fixed')
+                }
+            })
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="menu">
+            <ul class="clearfix">
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+                <li><a href="#">menu5</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iste blanditiis expedita praesentium, perspiciatis ab quos ad. Tempore minus quibusdam animi consequatur asperiores. Sit, iste ea perferendis repellat veritatis eaque quisquam nisi maxime voluptatum ut expedita minus iusto eos! Quas voluptas facere similique, velit cumque eos delectus iure, architecto quisquam officia eaque. Repellendus est sit asperiores delectus, molestiae, consequatur nihil architecto quo harum neque eum quis illo quidem nisi itaque blanditiis provident quas nam, tempore dolores amet aspernatur. Quasi aliquid ipsa natus rem aliquam dicta velit, possimus veniam ad cum praesentium. Illum incidunt voluptas eveniet est iusto corrupti, quam porro!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iste blanditiis expedita praesentium, perspiciatis ab quos ad. Tempore minus quibusdam animi consequatur asperiores. Sit, iste ea perferendis repellat veritatis eaque quisquam nisi maxime voluptatum ut expedita minus iusto eos! Quas voluptas facere similique, velit cumque eos delectus iure, architecto quisquam officia eaque. Repellendus est sit asperiores delectus, molestiae, consequatur nihil architecto quo harum neque eum quis illo quidem nisi itaque blanditiis provident quas nam, tempore dolores amet aspernatur. Quasi aliquid ipsa natus rem aliquam dicta velit, possimus veniam ad cum praesentium. Illum incidunt voluptas eveniet est iusto corrupti, quam porro!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iste blanditiis expedita praesentium, perspiciatis ab quos ad. Tempore minus quibusdam animi consequatur asperiores. Sit, iste ea perferendis repellat veritatis eaque quisquam nisi maxime voluptatum ut expedita minus iusto eos! Quas voluptas facere similique, velit cumque eos delectus iure, architecto quisquam officia eaque. Repellendus est sit asperiores delectus, molestiae, consequatur nihil architecto quo harum neque eum quis illo quidem nisi itaque blanditiis provident quas nam, tempore dolores amet aspernatur. Quasi aliquid ipsa natus rem aliquam dicta velit, possimus veniam ad cum praesentium. Illum incidunt voluptas eveniet est iusto corrupti, quam porro!
+        </div>
+    </div>
+</body>
+</html>
