@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko'">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        html,body{height: 100%;}
+        .menu{
+            position: fixed;
+            width: 100%;
+            background: skyblue;
+            padding-left: 30px;
+        }
+        .menu > h1,
+        .menu > a{
+            float: left;
+        }
+        .menu > h1{
+            margin-right: 30px;
+            line-height: 40px;
+        }
+        .menu > a{
+            display: block;
+            line-height: 40px;
+            padding: 0 20px;
+        }
+        .menu > a.on{
+            background: orange;
+        }
+
+        .scene{
+            width: 100%;
+            height: 100%;
+            /* 뷰포트 크기  */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .scene.one{
+            background-image: url(../images/pc01.jpg);
+        }
+        .scene.two{
+            background-image: url(../images/pc02.jpg);
+        }
+        .scene.three{
+            background-image: url(../images/pc03.jpg);
+        }
+
+        .scene div{
+            width: 50%;
+        }
+        .scene div h1{
+            font-size: 6vh;
+        }
+        .scene div h1:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #fff;
+            margin: 10px 0;
+            border-radius: 2px;
+        }
+    </style>
+
+    <script>
+        // 첫번째 - 창크기 바꾸면 적용안됨
+        // $(document).ready(function(){
+        //     $('.menu > a').eq(0).click(function(e){
+        //         e.preventDefault();
+        //         $('html,body').animate({scrollTop:$('.one').offset().top},300)
+        //     });
+        //     $('.menu > a').eq(1).click(function(){
+        //         e.preventDefault();
+        //         $('html,body').animate({scrollTop:$('.two').offset().top},300)
+        //     });
+        //     $('.menu > a').eq(2).click(function(){
+        //         e.preventDefault();
+        //         $('html,body').animate({scrollTop:$('.three').offset().top},300)
+        //     });
+
+        // })
+
+
+        // 2번째 - 창크기 바꿔도 적용됨
+        // $(document).ready(function(){
+        //     $('.menu > a').click(function(e){
+        //         e.preventDefault();
+        //         let i = $(this).index()
+        //         console.log(i)
+
+        //         let st = $(".scene").eq(i-1).offset().top
+        //         //h1도 a태그 있어서 i-1 i=1클릭하면 0번째 scene 나옴
+        //         $('html,body').animate({scrollTop:st},300)
+        //     })
+        // })
+
+        //3번째 - 해시태그 / 창크기 바꿔도 적용됨
+        $(document).ready(function(){
+            $('.menu > a').click(function(e){
+                e.preventDefault();
+                let target = $(this.hash)
+                let st = target.offset().top;
+
+                console.log(st)
+
+                // $('.menu > a').removeClass();
+                // $(this).addClass('on')
+
+                $('html,body').animate({scrollTop:st},300)
+            });
+
+            $(window).scroll(function(){
+                let scrollY = $(window).scrollTop();
+                if(scrollY >= $('.scene').eq(0).offset().top){
+                    $('.menu > a').removeClass().eq(0).addClass('on');
+                }
+                if(scrollY >= $('.scene').eq(1).offset().top){
+                    $('.menu > a').removeClass().eq(1).addClass('on');
+                }
+                if(scrollY >= $('.scene').eq(2).offset().top){
+                    $('.menu > a').removeClass().eq(2).addClass('on');
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <nav class="menu clearfix">
+        <h1><a href="#">LOGO</a></h1>
+        <a href="#v01" class="on">menu1</a>
+        <a href="#v02">menu2</a>
+        <a href="#v03">menu3</a>
+    </nav>
+    <section class="scene one" id="v01">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ullam ducimus, necessitatibus tempore sint sunt dolorum quia! Commodi, temporibus vitae?</p>
+        </div>
+    </section>
+    <section class="scene two" id="v02">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ullam ducimus, necessitatibus tempore sint sunt dolorum quia! Commodi, temporibus vitae?</p>
+        </div>
+    </section>
+    <section class="scene three" id="v03">
+        <div>
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus ullam ducimus, necessitatibus tempore sint sunt dolorum quia! Commodi, temporibus vitae?</p>
+        </div>
+    </section>
+</body>
+</html>
