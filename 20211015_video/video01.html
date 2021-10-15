@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        body{
+            height: 400vh;
+        }
+        .menu{
+            background: #000;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            top: 10px;
+        }
+        .menu ul{
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu ul li{
+            width: 20%;
+            text-align: center;
+            line-height: 40px;
+            color: #FE3573;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .menu ul li:hover{
+            background: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #myvideo{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li>오징어게임</li>
+            <li>술래잡기</li>
+            <li>딱지치기</li>
+            <li>뽑기</li>
+            <li>줄다리기</li>
+        </ul>
+    </nav>
+    <video id="myvideo" width="1920" height="1080" autoplay muted loop>
+        <source src="video/o_big_intro.mp4" type="video/mp4">
+    </video>
+    <div class="visual">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
