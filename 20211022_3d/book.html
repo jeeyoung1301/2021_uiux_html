@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bookCover{
+            position: absolute;
+            width: 336px;
+            height: 436px;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+            perspective: 500px ;
+        }
+        .book{
+            transform-style: preserve-3d;
+            transition: 0.3s;
+        }
+        .bookCover:hover .book{
+            transform:rotateY(45deg)
+        }
+        .face{
+            position: absolute;
+        }
+        .face-front{
+            transform: rotateY();
+        }
+        .face-left{
+            transform: translate3d(-13px,0,-13px) rotateY(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="bookCover">
+        <div class="book">
+            <div class="face face-front">
+                <img src="book_front.png" alt="">
+            </div>
+            <div class="face face-left">
+                <img src="book_left.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
