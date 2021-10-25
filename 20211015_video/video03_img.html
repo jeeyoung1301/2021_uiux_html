@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        body{
+            height: 400vh;
+        }
+        .sample-img{
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .view{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            color: white;
+            padding-top: 50vh;
+        }
+        .mb100{
+            margin-bottom: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/small/o_intro_small_1000.jpg" alt="" class="sample-img">
+    <div class="view">
+        <h2 class="mb100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, exercitationem!</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+    </div>
+
+    <script>
+        const sImg = document.querySelector('.sample-img')
+        const videoImg = []
+        let totalImg = 122;
+        let currentFrame
+
+        for (let i=0;i<totalImg;i++){
+            let imgElem = 'images/small/o_intro_small_' + (1000 + i) + '.jpg'
+
+            videoImg.push(imgElem)
+        }
+
+        window.addEventListener('scroll',function(){
+            let scrollY = window.pageYOffset;
+            let progress = scrollY / (document.body.offsetHeight - window.innerHeight);
+            currentFrame = Math.round((totalImg - 1) * progress);
+            sImg.src = videoImg[currentFrame]
+
+            console.log(currentFrame)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <style>
+        ul > li img{
+            width: 500px;
+        }
+        .sliderWrap{
+            width: 500px;
+            height: 281px;
+            margin: 0 auto;
+            background: skyblue;
+            position: relative;
+        }
+        .sliderWrap ul{
+            width: 500px;
+            height: 281px;
+            position: relative;
+            overflow: hidden;
+        }
+        .sliderWrap ul li{
+            position: absolute;
+            left: 100%;
+        }
+        .sliderWrap ul li:first-child{
+            left: 0;
+        }
+        .sliderWrap ul li h2{
+            position: absolute;
+            bottom: 16px;
+            color: white;
+            left: 16px;
+        }
+        .nextBtn,
+        .prevBtn{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .nextBtn{
+            right: 0;
+        }
+        .prevBtn{
+            left: 0;
+        }
+    </style>
+
+    <script>
+        let current = 0
+        let overBtn = false;
+
+        $(function(){
+            function nextSlider(){
+                if(overBtn == false){
+                    overBtn = true;
+                    $('.sliderWrap li').eq(current).css({'left':0}).stop().animate({'left':'-100%'},400)
+                    current++;
+                    if(current == 8){current = 0}
+                    $('.sliderWrap li').eq(current).css({'left':'100%'}).stop().animate({'left':0},400,function(){overBtn=false})
+                }
+            }
+            function prevSlider(){
+                if(overBtn == false){
+                    overBtn = true;
+                    $('.sliderWrap li').eq(current).css({'left':0}).stop().animate({'left':'100%'},400)
+                    current--;
+                    if(current == -1){current = 7}
+                    $('.sliderWrap li').eq(current).css({'left':'-100%'}).stop().animate({'left':0},400,function(){overBtn=false})
+                }
+            }
+
+            $('.nextBtn').click(function(){
+                nextSlider()
+            });
+            $('.prevBtn').click(function(){
+                prevSlider()
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="sliderWrap">
+        <ul>
+            <li>
+                <img src="../images/slideimg01 (1).jpg" alt="">
+                <h2>01</h2>
+            </li>
+            <li><img src="../images/slideimg01 (2).jpg" alt=""><h2>02</h2></li>
+            <li><img src="../images/slideimg01 (3).jpg" alt=""><h2>03</h2></li>
+            <li><img src="../images/slideimg01 (4).jpg" alt=""><h2>04</h2></li>
+            <li><img src="../images/slideimg01 (5).jpg" alt=""><h2>05</h2></li>
+            <li><img src="../images/slideimg01 (6).jpg" alt=""><h2>06</h2></li>
+            <li><img src="../images/slideimg01 (7).jpg" alt=""><h2>07</h2></li>
+            <li><img src="../images/slideimg01 (8).jpg" alt=""><h2>08</h2></li>
+        </ul>
+        <div class="nextBtn"><img src="../images/btn_right.png" alt=""></div>
+        <div class="prevBtn"><img src="../images/btn_left.png" alt=""></div>
+    </div>
+</body>
+</html>

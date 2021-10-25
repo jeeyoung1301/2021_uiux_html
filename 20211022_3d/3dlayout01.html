@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            width: 100px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            perspective: 500px;
+            /* 이동하려는 것 부모에게 perspective */
+        }
+        .inBox{
+            position: absolute;
+            background: orange;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+            transform-origin: 0 0; 
+            /* 원래 중심축은 도형 중심점 / 0 0은 도형 윗부분 중심으로 바뀜 */
+        }
+        .box1:hover .inBox{
+            /* transform: rotateY(-90deg);*/ 
+            /* 문열기 */
+            transform: translate3d(50px,50px,100px)
+            /* 아래 사선 앞으로 이동 (x축,y축,z축)*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">
+        <div class="inBox"></div>
+    </div>
+</body>
+</html>
