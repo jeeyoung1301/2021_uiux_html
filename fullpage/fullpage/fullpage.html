@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+
+    <style>
+        .section{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .section.page1{
+            background-image: url(images/bg1.jpg);
+        }
+        .section.page2{
+            background-image: url(images/bg2.jpg);
+        }
+        .section.page3{
+            background-image: url(images/bg3.jpg);
+        }
+        .section.page4{
+            background-image: url(images/bg4.jpg);
+        }
+    </style>
+
+    <script>
+        $(function(){
+            $('#fullpage').fullpage();
+        })
+    </script>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section page1">view1</div>
+        <div class="section page2">view2</div>
+        <div class="section page3">view3</div>
+        <div class="section page4">view4</div>
+    </div>
+</body>
+</html>
