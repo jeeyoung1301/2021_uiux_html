@@ -55,10 +55,33 @@
             transform: translateY(-100px);
         }
 
+        .scrollBtn{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: xScroll 0.8s infinite alternate;
+        }
+        @keyframes xScroll {
+            to{bottom: 40px;}
+        }
+
         @media screen and (max-width:576px){
             .section .view03{
                 transform:translateY(0px)
             }
+            .scrollBtn{
+                display: none;
+            }
+        }
+
+        #myVideo{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
     </style>
@@ -89,7 +112,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -114,8 +137,14 @@
     </nav>
     <div id="fullpage">
         <div class="section page1" data-anchor="m1st">
+            <video autoplay muted data-autoplay id="myVideo" loop>
+                <source src="../images/sample01.mp4">
+            </video>
             <div class="container bg-info view01">
                 test1
+            </div>
+            <div class="scrollBtn">
+                <a href="#m2nd"><img src="images/btn_scroll.png" alt=""></a>
             </div>
         </div>
         <div class="section page2" data-anchor="m2nd">
@@ -126,9 +155,10 @@
         <div class="section page3" data-anchor="m3rd">
             <div class="container view03">
                 <div class="row">
-                    <div class="col-md-4 offset-md-8 bg-danger">
+                    <div class="col-md-4 offset-md-8 bg-warning">
                         <h2>lorem</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe deserunt perferendis suscipit delectus porro ducimus quae atque consectetur dolorum qui.</p>
+                        <a href="#!" class="btn btn-primary">more</a>
                     </div>
                 </div>
             </div>
