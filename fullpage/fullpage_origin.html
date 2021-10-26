@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/fullpage.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/jquery.fullPage.js"></script>
 
@@ -41,6 +42,7 @@
             background: #cdcdcd;
             display: flex;
             padding-left: 20px;
+            box-sizing: border-box !important;
         }
         #navTop h1{
             margin-right: auto;
@@ -62,7 +64,13 @@
 
     <script>
         $(function(){
-            $('#fullpage').fullpage();
+            $('#fullpage').fullpage({
+                menu: '#topMenu',
+                //key : value
+                anchors: ['m1st','m2nd','m3rd','m4th'],
+                navigation:true,
+                navigationTooltips:['firstSlide','secondSlide','thirdSlide','fouthSlide']
+            });
         })
     </script>
 </head>
@@ -70,24 +78,34 @@
     <nav id="navTop">
         <h1>logo</h1>
         <ul class="clearfix" id="topMenu">
-            <li class="active"><a href="#">menu1</a></li>
-            <li><a href="#">menu2</a></li>
-            <li><a href="#">menu3</a></li>
-            <li><a href="#">menu4</a></li>
+            <li data-menuanchor="m1st"><a href="#m1st">menu1</a></li>
+            <li data-menuanchor="m2nd"><a href="#m2nd">menu2</a></li>
+            <li data-menuanchor="m3rd"><a href="#m3rd">menu3</a></li>
+            <li data-menuanchor="m4th"><a href="#m4th">menu4</a></li>
         </ul>
     </nav>
     <div id="fullpage">
-        <div class="section page1">
-            view1
+        <div class="section page1" data-anchor="m1st">
+            <div class="container bg-primary">
+                <div class="row">
+                    <div class="col-md-3">1</div>
+                    <div class="col-md-3">2</div>
+                    <div class="col-md-3">3</div>
+                    <div class="col-md-3">4</div>
+                </div>
+            </div>
         </div>
-        <div class="section page2">
+        <div class="section page2" data-anchor="m2nd">
             view2
         </div>
-        <div class="section page3">
+        <div class="section page3" data-anchor="m3rd">
             view3
         </div>
-        <div class="section page4">
-            view4
+        <div class="section page4" data-anchor="m4th">
+            <div class="slide" data-anchor="slide1"> Slide 1 </div>
+            <div class="slide" data-anchor="slide2"> Slide 2 </div>
+            <div class="slide" data-anchor="slide3"> Slide 3 </div>
+            <div class="slide" data-anchor="slide4"> Slide 4 </div>
         </div>
     </div>
     <table>
