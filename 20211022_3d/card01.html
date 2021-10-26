@@ -17,6 +17,7 @@
             background-image: url(images/back-img.jpg);
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
         }
         img{
             display: block;
@@ -27,12 +28,12 @@
             position: relative;
             transform-style: preserve-3d;
             transition: 1s;
-            transform: translateY(180deg);
+            transform: rotateY(180deg);
         }
         /* .card:hover{
             transform: rotateY(180deg);
         } */
-        .card.back{transform: translateY(0deg);}
+        .card.back{transform: rotateY(0deg);}
         .card div{
             position: absolute;
             width: 100%;
@@ -83,11 +84,15 @@
 
     <script>
         let card = document.querySelectorAll('.card')
-        for(i=0;i<card.length;i++){
-            card[i].addEventListener('click',function(){
-                this.classList.add('back')
+
+        card.forEach(function(item,i){
+            card[i].addEventListener('mouseover',function(){
+                this.classList.add('back');
+            });
+            card[i].addEventListener('mouseout',function(){
+                this.classList.remove('back');
             })
-        }
+        })
         // card[0].addEventListener('click',function(){
         //     card[0].classList.add('back')
         // })
