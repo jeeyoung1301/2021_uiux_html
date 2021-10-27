@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: rgb(177, 218, 235);
+        }
+        .man{
+            position: relative;
+            left: 200px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce{
+            50%{transform: translateY(10px);}
+        }
+        .man div{
+            position: absolute;
+        }
+        .man div.body{
+            z-index: 2;
+            left: 15px;
+            transform: rotate(5deg);
+        }
+        .man div.arm1{
+            top: 120px;
+            left: -10px;
+            z-index: 3;
+            transform-origin: 80px 21px;
+            transform: rotate(40deg);
+            animation: armR 1s linear infinite alternate;
+        }
+        @keyframes armR{
+            to{transform: rotate(-60deg);}
+        }
+        .man .arm1 img,
+        .man .arm2 img{
+            width: 100px;
+        }
+        .man div.arm2{
+            top: 120px;
+            left: -10px;
+            transform-origin: 80px 21px;
+            transform: rotate(-60deg);
+            animation: armL 1s linear infinite alternate;
+        }
+        @keyframes armL{
+            to{transform: rotate(40deg);}
+        }
+        .man .foot1,
+        .man .foot2{
+            top: 200px;
+        }
+        .man .foot2{
+            left: 1px;
+            transform-origin:40px 46px;
+            transform: rotate(-10deg);
+            animation: footL 1s linear infinite alternate;
+        }
+        @keyframes footL{
+            from{transform: rotate(-40deg);}
+            to{transform: rotate(40deg);}
+        }
+        .man .foot1{
+            left: 1px;
+            transform-origin: 40px 46px;
+            transform: rotate(10deg);
+            animation: footR 1s linear infinite alternate;
+        }
+        @keyframes footR{
+            from{transform: rotate(40deg);}
+            to{transform: rotate(-40deg);}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="man">
+        <div class="body"><img src="images/body01.png" alt=""></div>
+        <div class="arm1"><img src="images/arm01.png" alt=""></div>
+        <div class="arm2"><img src="images/arm01.png" alt=""></div>
+        <div class="foot1"><img src="images/foot01.png" alt=""></div>
+        <div class="foot2"><img src="images/foot01.png" alt=""></div>
+    </div>
+</body>
+</html>
