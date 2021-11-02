@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap{
+            width: 300px;
+            height: 300px;
+        }
+        .mask1{
+            stroke:#1d1d1b;
+            fill:#fff;
+        }
+        .cls-2.eye{
+            fill:#1d1d1b;
+            transform-origin: 50% 55%;
+            animation:  eye 1s alternate infinite;
+        }
+        @keyframes eye{
+            80%{transform: scaleY(1);}
+            to{transform: scaleY(0.2);}
+        }
+        .cls-4{fill:#e52421}
+        .myface{
+            animation: faceAni 1s alternate infinite;
+            transform: translateX(-30px);
+        }
+        @keyframes faceAni {
+            to{transform: translateX(-50px);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <svg id="Layer_1" viewBox="0 0 224.33 176.33">
+            <defs>
+                <mask id="face_mask">
+                    <path class="mask1" d="M242 100a26.67 26.67 0 1 0-46.42-25.1 147.15 147.15 0 0 0-40.28-5.51 144.26 144.26 0 0 0-51.24 9.15 26.67 26.67 0 1 0-41.38 27.36c-11.41 12.69-18 27.85-18 44.16 0 44.55 49.55 80.66 110.67 80.66S266 194.61 266 150.06c0-18.93-9-36.34-24-50.06Z" transform="translate(-43.13 -55.89)">
+                </mask>
+            </defs>
+
+            <g  mask="url(#face_mask)">
+                <g class="myface">
+                    <circle class="cls-2 eye" cx="85.81" cy="79.94" r="9.11"/>
+                    <circle class="cls-2" cx="143.14" cy="78.83" r="9.11"/>
+                    <path d="M177.16 178.22a19.56 19.56 0 1 1-39.11 0" transform="translate(-43.13 -55.89)" style="fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#1d1d1b;stroke-width:3px"/>
+                    <circle class="cls-4" cx="56.18" cy="103.22" r="7.56"/>
+                    <circle class="cls-4" cx="168.16" cy="103.22" r="7.56"/>
+                </g>
+            </g>
+            <path d="M242 100a26.67 26.67 0 1 0-46.42-25.1 147.15 147.15 0 0 0-40.28-5.51 144.26 144.26 0 0 0-51.24 9.15 26.67 26.67 0 1 0-41.38 27.36c-11.41 12.69-18 27.85-18 44.16 0 44.55 49.55 80.66 110.67 80.66S266 194.61 266 150.06c0-18.93-9-36.34-24-50.06Z" transform="translate(-43.13 -55.89)" style="stroke:#1d1d1b;stroke-width:3px;fill:none;stroke-miterlimit:10"/>
+        </svg>
+    </div>
+</body>
+</html>
