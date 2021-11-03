@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <style>
+        body{
+            height: 500vh;
+            background: orange;
+        }
+        .wrap{
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            perspective: 1000px;
+        }
+        .stage{
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+        .house{
+            width: 100vw;
+            height: 100vh;
+            transform-style: preserve-3d;
+            position: relative;
+            transform: translate3d(0,0,-500vw);
+        }
+        .wall{
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8vw;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .wall.wall_0st{
+            width: 1000vw;
+            background: rgba(255,255,255,0.3);
+        }
+        .wall.left{
+            transform:rotateY(90deg) translate3d(0,0,-500vw);
+        }
+        .wall.right{
+            transform:rotateY(90deg) translate3d(0,0,-400vw);
+        }
+        .wall.wall_title{
+            transform: translateZ(500vw);
+            background: rgb(255, 164, 112);
+        }
+        .wall.wall_sst{
+            transform: translateZ(450vw);
+        }
+        .wall.wall_1st{
+            transform: translateZ(300vw);
+            background-image: url(images/parallax7.png);
+            justify-content: flex-end;
+            background-color: rgba(255,255,255,0.3);
+        }
+        .wall.wall_1st h4,
+        .wall.wall_1st p{
+            width: 50%;
+        }
+        .wall.wall_2st{
+            transform: translateZ(200vw);
+            background-image: url(images/parallax8.png);
+        }
+        .wall.wall_3st{
+            transform: translateZ(150vw);
+            background-image: url(images/parallax6.png);
+        }
+        .wall.wall_4st{
+            transform: translateZ(80vw);
+            background-image: url(images/parallax5.png);
+        }
+        .wall.wall_5st{
+            transform: translateZ(0vw);
+        }
+        .wall.wall_6st{
+            transform: translateZ(-100vw);
+            background-image: url(images/parallax4.png);
+        }
+        .wall.wall_7st{
+            transform: translateZ(-200vw);
+            background-image: url(images/parallax3.png);
+        }
+        .wall.wall_8st{
+            transform: translateZ(-300vw);
+            background-image: url(images/parallax2.png);
+        }
+        .wall.wall_9st{
+            transform: translateZ(-400vw);
+            background-image: url(images/parallax1.png);
+        }
+        .wall.wall_10st{
+            transform: translateZ(-500vw);
+            background-image: url(images/parallax0.png);
+        }
+
+        .view{
+            position: fixed;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="view">
+        scrollratio: <span class="scroll">0</span>
+    </div>
+    <div class="wrap">
+        <div class="stage">
+            <div class="house">
+                <div class="wall wall_0st left">left</div>
+                <div class="wall wall_0st right">right</div>
+
+                <div class="wall wall_title">title</div>
+                <div class="wall wall_sst"></div>
+                <div class="wall wall_1st">
+                    <h4>2021.07.15</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="wall wall_2st">view2</div>
+                <div class="wall wall_3st">view3</div>
+                <div class="wall wall_4st">view4</div>
+                <div class="wall wall_5st">view5</div>
+                <div class="wall wall_6st">view6</div>
+                <div class="wall wall_7st">view7</div>
+                <div class="wall wall_8st">view8</div>
+                <div class="wall wall_9st">view9</div>
+                <div class="wall wall_10st">view10</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll',function(){
+            let scroll = window.pageYOffset / (document.body.offsetHeight - window.innerHeight);
+            document.querySelector('.scroll').innerHTML = scroll;
+
+            let ratio = scroll * 980 - 500;
+            document.querySelector('.house').style.transform = `translate3d(0,0,${ratio}vw)`
+        });
+
+        let menuPosX = 0;
+        let menuPosY = 0;
+
+        window.addEventListener('mousemove',function(e){
+            // e.clientX / window.innerWidth -> 0 - 1 (비율)
+            // e.clientX / window.innerWidth * 2 -> 0 - 2 (비율)
+            // -1 +  e.clientX / window.innerWidth * 2 -> -1 - 1 (비율)
+            menuPosX = -1 + e.clientX / window.innerWidth * 2
+            menuPosY = 1 - e.clientY / window.innerHeight *2
+
+            document.querySelector('.stage').style.transform = `rotateY(${menuPosX*5}deg) rotateX(${menuPosY*5}deg)`
+
+
+            console.log(1 - e.clientY / window.innerHeight *2)
+        })
+    </script>
+</body>
+</html>
