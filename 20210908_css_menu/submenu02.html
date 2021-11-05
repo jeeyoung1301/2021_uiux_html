@@ -6,119 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>submenu</title>
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../css/jquery.bxslider.css">
+
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script src="../js/jquery.bxslider.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.slider').bxSlider({})
-        });
-    </script>
+    <script src="script.js"></script>
 
-    <style>
-        .slider img{width: 100%;}
-        .bx-wrapper{position: absolute;top: 0;box-shadow: none;border: none;}
-        .bx-controls{position: relative;}
-        .bx-pager{position: absolute;top: -60px;}
-
-        .submenu{display: none;}
-        .top{
-            width: 100%;position: absolute;z-index: 1;
-            background: linear-gradient(120deg,#654ea3 0%,#eaafc8 100%);
-        }
-
-        .gnb{
-            width: 1000px;margin: 0 auto;
-            position: relative;z-index: 1;
-        }
-        .gnb>ul>li{float: left;width: calc(100% / 5);}
-        .gnb>ul>li>a{
-            text-align: center;display: block;
-            line-height: 40px;color: white;font-weight: bold;
-            transition: 0.3s;
-        }
-        .gnb>ul>li:hover a{background: #654ea3;}
-
-        /* .gnb>ul>li:first-child .submenu{display: block;} */
-        .gnb>ul>li:hover .submenu{display: block;}
-        /* .submenu{position: absolute;background: #654ea3;z-index: 1;} */
-        .submenu>li{float: left;padding: 5px 10px;}
-        .submenu a{color: white;display: block;line-height: 30px;}
-
-        .subWrap{margin: 0 auto;}
-        
-        /* .gnb>ul>li:nth-child(2) .submenu{left: 20px;}
-        .gnb>ul>li:nth-child(3) .submenu{left: 50%;transform: translateX(-50%);}
-        .gnb>ul>li:nth-child(4) .submenu{left: calc(50% + 30px);}
-        .gnb>ul>li:nth-child(5) .submenu{right: 0;} */
-
-        /* .bar{width: 100%;;height: 40px;background: #654ea3;position: absolute;display: none;}
-        .gnb:hover .bar{display: block;} */
-        .gnb>ul>li .subWrap{left: 0;}
-        .gnb>ul>li:hover .subWrap{
-            width: 100%;background: #654ea3;position: absolute;z-index: 1;height: 40px;
-        }
-
-
-        
-    </style>
 </head>
 <body>
     <div class="top">
         <nav class="gnb">
             <ul class="clearfix">
                 <li>
-                    <a href="#">MENU1</a>
+                    <a href="#">회사소개</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub01_01</a></li>
-                            <li><a href="#">sub01_02</a></li>
-                            <li><a href="#">sub01_03</a></li>
-                            <li><a href="#">sub01_04</a></li>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">비젼</a></li>
+                            <li><a href="#">오시는길</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">MENU2</a>
+                    <a href="#">제품소개</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub02_01</a></li>
-                            <li><a href="#">sub02_02</a></li>
-                            <li><a href="#">sub02_03</a></li>
-                            <li><a href="#">sub02_04</a></li>
+                            <li><a href="#">제품1</a></li>
+                            <li><a href="#">제품2</a></li>
+                            <li><a href="#">제품3</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">MENU3</a>
+                    <a href="#">사업영역</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub03_01</a></li>
-                            <li><a href="#">sub03_02</a></li>
-                            <li><a href="#">sub03_03</a></li>
-                            <li><a href="#">sub03_04</a></li>
+                            <li><a href="#">친환경에너지</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">MENU4</a>
+                    <a href="#">고객센터</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub04_01</a></li>
-                            <li><a href="#">sub04_02</a></li>
-                            <li><a href="#">sub04_03</a></li>
-                            <li><a href="#">sub04_04</a></li>
+                            <li><a href="#">묻고 답하기</a></li>
+                            <li><a href="#">자유게시판</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">MENU5</a>
+                    <a href="#">갤러리</a>
                     <div class="subWrap">
                         <ul class="submenu clearfix">
-                            <li><a href="#">sub05_01</a></li>
-                            <li><a href="#">sub05_02</a></li>
-                            <li><a href="#">sub05_03</a></li>
-                            <li><a href="#">sub05_04</a></li>
+                            <li><a href="#">홍보영상</a></li>
+                            <li><a href="#">이벤트</a></li>
                         </ul>
                     </div>
                 </li>
@@ -128,10 +70,12 @@
     </div>
     <div class="visual">
         <ul class="slider">
-            <li><img src="../images/pc01.jpg" alt=""></li>
-            <li><img src="../images/pc02.jpg" alt=""></li>
-            <li><img src="../images/pc03.jpg" alt=""></li>
+            <li><img src="../images/images01.jpg" alt=""></li>
+            <li><img src="../images/images02.jpg" alt=""></li>
+            <li><img src="../images/images03.jpg" alt=""></li>
         </ul>
+        <img src="btn_right.png" alt="" class="nextBtn">
+        <img src="btn_left.png" alt="" class="prevBtn">
     </div>
 </body>
 </html>
