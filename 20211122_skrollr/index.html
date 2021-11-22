@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="js/skrollr.min.js"></script>
+
+    <style>
+        body{
+            height: 500vh;
+            background: #000;
+        }
+        .box{
+            position: fixed;
+            color: white;
+        }
+        #scene_1st{
+            background: url(img/bg/space_stars_static.svg);
+            height: 500vh;
+            width: 100%;
+        }
+        #scene_1st .man{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+        .content1,
+        .content2{
+            width: 300px;
+            height: 200px;
+            background: white;
+            border-radius: 10px;
+            padding: 16px;
+            opacity: 0;
+        }
+        .container{
+            width: 1000px;
+            position: absolute;
+            top: 1000px;
+            background: skyblue;
+            padding: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @media screen and (min-width:700px){
+            .content1{
+                position: absolute;
+                top: 500px;
+                right: 10%;
+            }
+            .content2{
+                position: absolute;
+                top: 900px;
+                left: 10%;
+            }
+        }
+
+        @media screen and (max-width:699px){
+            .content1,
+            .content2{
+                position: fixed;
+                bottom: 50px;
+                left: 50%;
+                margin-left: -150px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        현재위치 : <span class="scroll">0</span><br>
+        스크롤높이: <span class="scrollHeight">0</span>
+    </div>
+
+    <section id="scene_1st" class="view01">
+        <div class="man" 
+        data-0="transform: translate(-50%,-50%) scale(0); position:fixed;"
+        data-200="transform: translate(-50%,-50%) scale(1);">
+            <img src="img/char/character_astronaut.svg" alt=""
+            data-0="display:block;"
+            data-400="display:none;"
+            >
+            <img src="img/char/character_astronaut_drift.svg" alt=""
+            data-0="display:none;"
+            data-400="display:block;"
+            data-800="display:none"
+            >
+            <img src="img/char/character_astronaut_excited.svg" alt=""
+            data-0="display:none;"
+            data-800="display:block;"
+            >
+        </div>
+        <div class="text">
+            <div class="content1"
+            data-0="opacity:0;"
+            data-220="opacity:1"
+            data-340="opacity:1"
+            data-480="opacity:0"
+            >
+                01. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur, laboriosam.
+            </div>
+            <div class="content2"
+            data-0="opacity:0"
+            data-420="opacity:0"
+            data-520="opacity:1"
+            data-640="opacity:1"
+            data-780="opacity:0"
+            >
+                02. Lorem ipsum dolor sit amet consectetur, adipisicing elit. A omnis reprehenderit laboriosam. Qui, officiis natus?
+            </div>
+        </div>
+        <div class="container"
+        data-0="left:-100%"
+        data-800="left:-100%"
+        data-1000="left:50%"
+        >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio cum quia excepturi, laudantium magnam quidem, tempora nostrum consequuntur hic error accusamus esse minus eius provident enim nesciunt laborum ratione! Perferendis quam sapiente asperiores ab, porro officia numquam officiis? Possimus suscipit illo recusandae architecto, eum provident nisi voluptatibus fugiat necessitatibus iste explicabo harum, optio numquam corporis atque, vitae quam totam iure itaque consectetur eveniet tenetur. Omnis eaque quisquam facilis veritatis, vitae ex placeat sit at dolorum perspiciatis suscipit laboriosam porro aspernatur hic mollitia nulla consequuntur sapiente nihil ipsam aut velit facere. Quos harum eaque et nihil temporibus aliquam unde beatae iste officia possimus, nulla minus expedita accusamus inventore aut odit dolorum quisquam voluptate. Molestias aliquam obcaecati illum ab consequatur ducimus harum natus, unde suscipit? Commodi porro excepturi repellat tempore magni libero itaque ut. Facilis repellat adipisci, dolorum officia quisquam impedit eius perspiciatis perferendis et voluptas sint architecto modi ducimus, quaerat nostrum quo iusto iure consequatur eum aliquid? Ab impedit eum quod corporis quo reprehenderit quisquam esse quis. Laboriosam ipsum dignissimos delectus, quas sit a sequi voluptatibus, adipisci dolorum illo animi corporis explicabo provident aspernatur expedita officiis facilis recusandae. Incidunt repellendus sunt cumque, illum inventore ullam distinctio, eaque ducimus ipsum laudantium maiores! Laboriosam a culpa repellat dolorem nostrum enim commodi porro at exercitationem dolor! Eveniet, tenetur maxime itaque quia earum commodi iste neque quibusdam ipsum iusto. At hic facilis nesciunt? Doloribus, hic aut aspernatur possimus quas sint debitis id inventore expedita laudantium accusamus. Architecto autem accusamus quo qui ipsa vitae, nam velit ad ipsum, dolore ipsam? Odio, eligendi libero exercitationem nobis magnam ab error quidem? Assumenda, at amet odit natus tempore cupiditate incidunt obcaecati, culpa repellat, laboriosam consectetur? Itaque iure, et harum necessitatibus suscipit repudiandae quisquam ducimus, dolore cumque exercitationem quibusdam tempore quos, nostrum quod dolores maxime sed. Molestias vel asperiores nostrum
+        </div>
+
+    </section>
+    <script>
+        skrollr.init();
+
+        let scrollY = 0;
+        let wHeight = 0;
+
+        window.addEventListener('scroll',function(){
+            viewer()
+        });
+
+        function viewer(){
+            scrollY = window.pageYOffset;
+            wHeight = document.body.offsetHeight - window.innerHeight
+
+            document.querySelector('.scroll').innerHTML = scrollY;
+            document.querySelector('.scrollHeight').innerHTML = wHeight;
+        }
+
+        viewer()
+    </script>
+</body>
+</html>
